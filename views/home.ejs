@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") -%>
+
+
+<h1>Home</h1>
+
+<p><%= homeContent %></p>
+
+
+
+<% newContent.forEach(function(post){ %>
+
+   <% let toShow = post.content.substring(0, 100); %>
+   
+    <h1><%= post.title %></h1>
+    <p><%= toShow %> ... <a href="/posts/<%= post.title %>" target="blank"> Read More</a> </p>
+<% }); %>
+
+<%- include("partials/footer.ejs") -%>
